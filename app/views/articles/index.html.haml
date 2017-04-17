@@ -1,1 +1,11 @@
-%h1 this is a index page 
+%h1 Home Page
+
+- @articles.each do |article|
+  %h2= article.title
+  %p
+    Puplished at
+    = article.created_at.strftime('%B, %d, %Y')
+  %p= truncate(article.content, length: 200)
+
+
+= link_to "New Article", new_article_path
