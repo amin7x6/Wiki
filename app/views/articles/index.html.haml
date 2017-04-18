@@ -1,4 +1,3 @@
-%h1 Home Page
 
 - @articles.each do |article|
   %h2= link_to article.title, article
@@ -6,6 +5,4 @@
     Puplished at
     = article.created_at.strftime('%B, %d, %Y')
   %p= truncate(article.content, length: 200)
-
-- if user_signed_in?
-  = link_to "New Article", new_article_path
+  %hr
